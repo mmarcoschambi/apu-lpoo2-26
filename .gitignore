@@ -1,0 +1,23 @@
+## Build and output folders
+[Bb]in/
+[Oo]bj/
+out/
+
+## Visual Studio files
+.vs/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.userprefs
+*.dbmdl
+*.opendb
+
+## System and temp
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.tmp
+*.bak
+*.log

@@ -1,0 +1,65 @@
+<Window x:Class="Vistas.FormVendedor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ABM de Vendedores (Gestión Administrativa)" 
+        Height="400" Width="680" 
+        WindowStartupLocation="CenterOwner" 
+        Background="#F1F5F9">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Toolbar Superior -->
+        <Border Grid.Row="0" Background="#E2E8F0" CornerRadius="6" Padding="6" Margin="0,0,0,15">
+            <WrapPanel>
+                <Button x:Name="btnNuevo" Content="Nuevo" Click="btnNuevo_Click" Width="70" Background="#3B82F6" Foreground="White" FontWeight="SemiBold"/>
+                <Button x:Name="btnModificar" Content="Modificar" Width="75" IsEnabled="False"/>
+                <Button x:Name="btnEliminar" Content="Eliminar" Width="70" IsEnabled="False"/>
+
+                <Separator Margin="8,2" Width="2"/>
+
+                <Button x:Name="btnGuardar" Content="Guardar" Click="btnGuardar_Click" Width="75" Background="#10B981" Foreground="White" FontWeight="SemiBold" IsEnabled="False"/>
+                <Button x:Name="btnCancelar" Content="Cancelar" Click="btnCancelar_Click" Width="75" Background="#EF4444" Foreground="White" IsEnabled="False"/>
+
+                <Separator Margin="8,2" Width="2"/>
+
+                <Button x:Name="btnPrimero" Content="Primero" Width="65" IsEnabled="False"/>
+                <Button x:Name="btnAnterior" Content="Anterior" Width="65" IsEnabled="False"/>
+                <Button x:Name="btnSiguiente" Content="Siguiente" Width="65" IsEnabled="False"/>
+                <Button x:Name="btnUltimo" Content="Último" Width="65" IsEnabled="False"/>
+            </WrapPanel>
+        </Border>
+
+        <!-- Campos de Datos (Legajo, Apellido, Nombre) -->
+        <Border Grid.Row="1" Background="White" CornerRadius="8" Padding="20" BorderBrush="#CBD5E1" BorderThickness="1">
+            <Grid VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="Legajo:" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtLegajo" Grid.Row="0" Grid.Column="1" Height="28" IsEnabled="False"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Apellido:" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtApellido" Grid.Row="1" Grid.Column="1" Height="28" IsEnabled="False"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Content="Nombre:" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtNombre" Grid.Row="2" Grid.Column="1" Height="28" IsEnabled="False"/>
+            </Grid>
+        </Border>
+
+        <!-- Botón Salir -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0">
+            <Button x:Name="btnSalir" Content="Salir" Click="btnSalir_Click" Width="90" Height="30" Background="#475569" Foreground="White" FontWeight="Bold"/>
+        </StackPanel>
+    </Grid>
+</Window>
