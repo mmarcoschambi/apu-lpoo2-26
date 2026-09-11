@@ -60,10 +60,9 @@ Tu entorno cuenta con todas las herramientas necesarias:
 
 ## 👥 Flujo de Colaboración con tus Compañeros
 
-1. **Subir a GitHub / GitLab:**
+1. **Clonar el Repositorio (Compañeros):**
    ```bash
-   git remote add origin <URL_DEL_REPOSITORIO_REMOTO>
-   git push -u origin main
+   git clone https://github.com/mmarcoschambi/apu-lpoo2-26.git
    ```
 2. **Buenas prácticas para el equipo:**
    * Cada integrante trabaja en una rama feature (ej: `git checkout -b feature/tp1-vistas`).
