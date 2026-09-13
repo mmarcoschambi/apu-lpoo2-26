@@ -1,0 +1,13 @@
+<Window x:Class="Vistas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LPOO II - Grupo 13" Height="350" Width="525">
+    <Grid>
+        <Image Source ="images/gucciMorty.jfif" Stretch="UniformToFill"></Image>
+        <TextBlock Text="Proyecto LPOO II - Fase 0 Inicial" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   FontSize="16" 
+                   Foreground="Gray"/>
+    </Grid>
+</Window>
