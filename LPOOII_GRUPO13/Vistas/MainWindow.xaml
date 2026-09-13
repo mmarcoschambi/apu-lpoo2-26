@@ -10,14 +10,14 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="Sistema de Mueblería" FontSize="22"
-                   FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,25"/>
-
+        <TextBlock x:Name="lblTitulo" Text="Bienvenido, " FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,21,0,34" Height="29" />
+        <TextBlock x:Name="lblRol" Text="Rol: " FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,48,0,6" Height="30" />
+        
         <StackPanel Grid.Row="1" Width="230">
-            <Button Content="Alta de Proveedores" Height="35" Margin="3" Click="btnProveedores_Click"/>
-            <Button Content="Alta de Clientes" Height="35" Margin="3" Click="btnClientes_Click"/>
-            <Button Content="Alta de Productos" Height="35" Margin="3" Click="btnProductos_Click"/>
-            <Button Content="Alta de Vendedores" Height="35" Margin="3" Click="btnVendedores_Click"/>
+            <Button x:Name="btn_Proveedores" Content="Alta de Proveedores" Height="35" Margin="3" Click="btnProveedores_Click"/>
+            <Button x:Name="btn_Clientes" Content="Alta de Clientes" Height="35" Margin="3" Click="btnClientes_Click"/>
+            <Button x:Name="btn_Productos" Content="Alta de Productos" Height="35" Margin="3" Click="btnProductos_Click"/>
+            <Button x:Name="btn_Vendedores" Content="Alta de Vendedores" Height="35" Margin="3" Click="btnVendedores_Click"/>
         </StackPanel>
 
         <Button Grid.Row="2" Content="Salir" Width="90" Height="30"

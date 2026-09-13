@@ -8,6 +8,34 @@ namespace Vistas
         public MainWindow()
         {
             InitializeComponent();
+
+            string rol = "Admin";
+            string usuario = "Carlos";
+
+            lblTitulo.Text = "Bienvenido, " + usuario;
+            lblRol.Text = "Rol actual: " + rol;
+
+            AplicarPermisos(rol);
+        }
+
+        private void AplicarPermisos(string rol)
+        {
+            if (rol == "Admin")
+            {
+                btn_Proveedores.IsEnabled = true;
+                btn_Clientes.IsEnabled = true;
+                btn_Productos.IsEnabled = true;
+                btn_Vendedores.IsEnabled = true;
+            }
+            else if (rol == "Vendedor")
+            {
+                // El usuario Vendedor NO tiene acceso a la gestión de Vendedores
+                btn_Proveedores.IsEnabled = false;
+                btn_Vendedores.IsEnabled = false;
+                
+                // Opcional: si prefieres ocultarlo por completo en vez de deshabilitarlo:
+                // btnVendedores.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void btnProveedores_Click(object sender, RoutedEventArgs e)
