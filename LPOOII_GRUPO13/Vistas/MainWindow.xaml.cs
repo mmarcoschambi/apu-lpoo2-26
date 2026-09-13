@@ -9,5 +9,41 @@ namespace Vistas
         {
             InitializeComponent();
         }
+
+        private void btnProveedores_Click(object sender, RoutedEventArgs e)
+        {
+            ProveedorWindow ventana = new ProveedorWindow();
+            ventana.ShowDialog();
+        }
+
+        private void btnClientes_Click(object sender, RoutedEventArgs e)
+        {
+            ClienteWindow ventana = new ClienteWindow();
+            ventana.ShowDialog();
+        }
+
+        private void btnProductos_Click(object sender, RoutedEventArgs e)
+        {
+            ProductoWindow ventana = new ProductoWindow();
+            ventana.ShowDialog();
+        }
+
+        private void btnVendedores_Click(object sender, RoutedEventArgs e)
+        {
+            VendedorWindow ventana = new VendedorWindow();
+            ventana.ShowDialog();
+        }
+
+        private void btnSalir_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult respuesta = MessageBox.Show(
+                "¿Está seguro de que desea salir?",
+                "Confirmar salida",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
+
+            if (respuesta == MessageBoxResult.Yes)
+                Close();
+        }
     }
 }
