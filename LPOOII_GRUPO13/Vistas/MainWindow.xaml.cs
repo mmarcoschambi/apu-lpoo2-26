@@ -29,12 +29,7 @@ namespace Vistas
             }
             else if (rol == "Vendedor")
             {
-                // El usuario Vendedor NO tiene acceso a la gestión de Vendedores
-                btn_Proveedores.IsEnabled = false;
                 btn_Vendedores.IsEnabled = false;
-                
-                // Opcional: si prefieres ocultarlo por completo en vez de deshabilitarlo:
-                // btnVendedores.Visibility = Visibility.Collapsed;
             }
         }
 
