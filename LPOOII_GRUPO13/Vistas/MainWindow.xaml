@@ -10,6 +10,9 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
+        <Image Grid.RowSpan="3" Source="images/gucciMorty.jfif" Stretch="UniformToFill"
+               Opacity="0.35" IsHitTestVisible="False"/>
+
         <TextBlock x:Name="lblTitulo" Text="Bienvenido, " FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,21,0,34" Height="29" />
         <TextBlock x:Name="lblRol" Text="Rol: " FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,48,0,6" Height="30" />
         

@@ -5,12 +5,13 @@ namespace Vistas
 {
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private readonly string rolActual;
+
+        public MainWindow(string usuario, string rol)
         {
             InitializeComponent();
 
-            string rol = "Admin";
-            string usuario = "Carlos";
+            rolActual = rol;
 
             lblTitulo.Text = "Bienvenido, " + usuario;
             lblRol.Text = "Rol actual: " + rol;
@@ -29,6 +30,9 @@ namespace Vistas
             }
             else if (rol == "Vendedor")
             {
+                btn_Proveedores.IsEnabled = true;
+                btn_Clientes.IsEnabled = true;
+                btn_Productos.IsEnabled = true;
                 btn_Vendedores.IsEnabled = false;
             }
         }
@@ -53,6 +57,11 @@ namespace Vistas
 
         private void btnVendedores_Click(object sender, RoutedEventArgs e)
         {
+            if (rolActual != "Admin")
+            {
+                return;
+            }
+
             VendedorWindow ventana = new VendedorWindow();
             ventana.ShowDialog();
         }

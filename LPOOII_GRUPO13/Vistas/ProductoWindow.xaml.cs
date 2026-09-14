@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Windows;
 using ClasesBase;
 
@@ -6,6 +7,12 @@ namespace Vistas
 {
     public partial class ProductoWindow : Window
     {
+        // Política de cultura para Precio: se exige punto "." como separador decimal
+        // (CultureInfo.InvariantCulture) y no se permiten separadores de miles,
+        // para no interpretar en forma distinta según la configuración regional de Windows.
+        private static readonly NumberStyles EstilosPrecio = NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign;
+        private static readonly CultureInfo CulturaPrecio = CultureInfo.InvariantCulture;
+
         private Producto oProducto;
 
         public ProductoWindow()
@@ -30,9 +37,9 @@ namespace Vistas
             }
 
             decimal precio;
-            if (!Decimal.TryParse(txtPrecio.Text.Trim(), out precio) || precio <= 0)
+            if (!Decimal.TryParse(txtPrecio.Text.Trim(), EstilosPrecio, CulturaPrecio, out precio) || precio <= 0)
             {
-                MessageBox.Show("El precio debe ser un número mayor que cero.", "Validación",
+                MessageBox.Show("El precio debe ser un número mayor que cero, usando punto como separador decimal (ej: 1500.50).", "Validación",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
                 txtPrecio.Focus();
                 return;
@@ -52,7 +59,7 @@ namespace Vistas
                     "\nCategoría: " + oProducto.Categoría +
                     "\nColor: " + oProducto.Color +
                     "\nDescripción: " + oProducto.Descripción +
-                    "\nPrecio: $" + oProducto.Precio.ToString("0.00"),
+                    "\nPrecio: $" + oProducto.Precio.ToString("0.00", CulturaPrecio),
                     "Datos guardados", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 ModoConsulta();
